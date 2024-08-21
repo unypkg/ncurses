@@ -96,6 +96,7 @@ for lib in ncurses form panel menu; do
     ln -sfv lib${lib}w.so lib${lib}.so
     ln -sfv pkgconfig/${lib}w.pc pkgconfig/${lib}.pc
 done
+ln -sfv libncursesw.so libcurses.so
 sed -e 's/^#if.*XOPEN.*$/#if 1/' -i ../include/curses.h
 cd ../include || exit
 ln -s ncursesw ncurses
